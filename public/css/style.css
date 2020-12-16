@@ -1,0 +1,12 @@
+#imgPreview{
+    margin:15px;
+    height:100px;
+    width:100px;
+}
+button[type="submit"]{
+border:1px solid gray;
+}
+.imgs{
+    height:100px;
+    width:100px;
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>CMS</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark  d-flex justify-content-between">
+    <a class="navbar-brand" href="#"><%= raj %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault" >
+      <ul class="navbar-nav">
+       <%  pages.forEach((page)=>{ %>
+        <% if(page.slug != 'home'){ %>
+        <li>
+          <a class="nav-link" href="/<%= page.slug %>"><%= page.title %><span class="sr-only"></span></a>
+        </li>
+        <%}else{%>
+        <li>
+          <a class="nav-link" href="/">home<span class="sr-only">(current)</span></a>
+        </li>
+        <%}%>
+          <% }); %>
+          
+        </ul>
+        
+      </div>
+      <ul class="navbar-nav navbar-right">
+        <% if(login == 'login') {%> 
+        <li class="" style="float:right">
+          <a class="nav-link " href="/register">register<span class="sr-only">(current)</span></a>
+        </li>
+      <% } %> 
+      <% if(login == 'login') { %> 
+        <li class="" style="float:right">
+          <a class="nav-link " href="/<%- login %>"> <%- login %><span class="sr-only">(current)</span></a>
+        </li>
+      <% }else{ %> 
+        <li class="" style="float:right">
+          <a class="nav-link " href="/"> <%- login %><span class="sr-only">(current)</span></a>
+        </li>
+        <% } %> 
+      </ul>
+    </nav>
+
+    <main role="main" class="container">
+      
+      <%- messages('messages', locals) %>

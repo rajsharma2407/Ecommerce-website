@@ -1,0 +1,49 @@
+<%# include('_layouts/header'); -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+     body{
+         display: flex;
+         background:gray;
+         align-items: center;
+         height:80vh;
+         flex-direction: column;
+         width:100%;
+         justify-content: center;
+     }
+  </style>
+    <title>Document</title>
+</head>
+<body>
+<%- messages('messages', locals) %>
+<% if(errors) {%>
+  <% errors.forEach((error)=>{%>
+    <div class="alert-danger alert">
+      <%= error.msg %>
+    </div>
+  <% }); %>
+<% }%>
+<form action="/register" class="form my-5 container mycon" method="POST">
+    <div class="form-group">
+        <input type="text" placeholder="username" name="username" class="form-control" value="<%= user %>">
+    </div>
+
+    <div class="form-group">
+        <input type="email" placeholder="email" name="email" class="form-control" value="<%= email %>">
+    </div>
+    
+    <div class="form-group">
+        <input type="password" placeholder="password"  name="password" class="form-control" value="<%= pass %>">
+    </div>
+    <div class="form-group">
+        <input type="password" placeholder="confirm-password" name="confirm" class="form-control" value="<%= confirm %>">
+    </div>
+    <div class="form-group">
+        <input type="submit" placeholder="username" value="submit" class="">
+    </div>
+</form>
+<%- include('_layouts/footer'); -%>

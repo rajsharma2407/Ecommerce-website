@@ -1,0 +1,15 @@
+<%- include('_layouts/header'); -%>
+<div class="container container-fluid"> 
+
+    <% product.forEach((p)=>{ %> 
+    <div class="mx-1 align-center">
+    <h2 class="my-2"><%= p.title %></h2>
+    <p><%- p.desc %> </p>
+    <a href="/product_images/<%= p._id %>/<%= p.image %>">
+    <img src="/product_images/<%= p._id %>/<%= p.image %>" alt="" style="height:150px;">
+</a>
+</div>
+    <% }) %> 
+
+</div>
+<%- include('_layouts/footer'); -%>

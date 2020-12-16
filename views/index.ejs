@@ -1,0 +1,16 @@
+<%- include('_layouts/header'); -%>
+
+<div style="float: left; height: 50vh; width:250px;">
+    <h3>Products</h3>
+    <ul style="list-style: none; display: flex;flex-direction:column;height: 100%; " class="">
+      <li style="margin:10px;"><a href="/products">All products</a></li> 
+      <li style="margin:10px;"><a href="/products/T shirt">T shirt</a></li>
+      <li style="margin:10px;"><a href="/products/car">Fruits</a></li>
+    </ul>
+  </div>
+  
+<div class="container">
+    <h2 class="my-2"><%- title.toUpperCase() %></h2>
+    <p><%- content %> </p>
+</div>
+<%- include('_layouts/footer'); -%>
